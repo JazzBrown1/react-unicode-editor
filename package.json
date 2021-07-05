@@ -8,8 +8,7 @@
     "type": "git",
     "url": "https://github.com/JazzBrown1/react-unicode-editor.git"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "scripts": {
     "build": "tsc && rollup --config"
   },
