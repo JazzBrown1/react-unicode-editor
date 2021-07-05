@@ -8,7 +8,7 @@ export interface VariableOptions {
   format?: string
 }
 
-export type TextAreaState = Array<VariableOptions | string>
+export type EditorState = Array<VariableOptions | string>
 
 export function determineIfHTMLorText(toBeDetermined: Text | HTMLElement): toBeDetermined is HTMLElement {
   if((toBeDetermined as HTMLElement).outerHTML){
@@ -26,7 +26,7 @@ const isDiv = (node: Text | HTMLElement) => {
   } else return false;
 }
 
-const flattenTree = (arr: TextAreaState, parent : HTMLElement) => {
+const flattenTree = (arr: EditorState, parent : HTMLElement) => {
   const nodes = <Array<Text | HTMLElement>>Array.from(parent.childNodes);
   nodes.forEach((node, i) => {
     if(determineIfHTMLorText(node)){
@@ -49,9 +49,9 @@ const flattenTree = (arr: TextAreaState, parent : HTMLElement) => {
   });
 };
 
-const makeState = (TextAreaElement: HTMLDivElement | null): TextAreaState => {
+const makeState = (TextAreaElement: HTMLDivElement | null): EditorState => {
   if (!TextAreaElement) return [];
-  const arr:TextAreaState = [];
+  const arr:EditorState = [];
   flattenTree(arr, TextAreaElement);
   return arr;
 };

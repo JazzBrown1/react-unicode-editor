@@ -97,9 +97,10 @@ const addVariableElement = (textAreaElement, options) => {
 };
 
 const applyStateToTextArea1 = (state, textArea) => {
-    const p = document.createElement('div');
-    textArea.appendChild(p);
-    let row = p;
+    //future implementation
+    // const p = document.createElement('div');
+    // textArea.appendChild(p)
+    let row = textArea;
     state.forEach((el, i) => {
         if (typeof el === 'string') {
             if (el === '\n') {
@@ -375,30 +376,7 @@ class UnicodeTextArea extends Component {
                 this.textAreaRef.current.innerHTML = '';
                 applyStateToTextArea1(state, this.textAreaRef.current);
             }, 5);
-            const stringToHTML = function (str) {
-                var dom = document.createElement('div');
-                dom.innerHTML = str;
-                console.log(str, dom);
-                return dom;
-            };
-            console.log(e);
-            const el = stringToHTML(e.clipboardData.getData('text/html'));
-            console.log(el.childNodes);
-            console.log(Array.from(el.childNodes).reduce((acc, el) => {
-                if (!el.tagName)
-                    return acc;
-                const tag = el.tagName.toLowerCase();
-                if (tag === 'span') {
-                    if (el.className.startsWith('Jazzs'))
-                        acc.push(el);
-                    else if (el.firstChild)
-                        acc.push(el.firstChild.data);
-                }
-                else if (tag === 'div' && el.childNodes.length !== 0)
-                    acc.push(el);
-                return acc;
-            }, []));
-            console.log(el.childNodes);
+            // doPaste();
         };
         this.props = props;
         this.textAreaRef = createRef();
@@ -447,9 +425,7 @@ class UnicodeTextArea extends Component {
         this.updateState();
     }
     render() {
-        return (jsx("div", { id: "jazzy-ce-area", onKeyDown: (e) => {
-                if (e.key === 'Enter') ;
-            }, contentEditable: !this.props.disabled, role: "textbox", "aria-label": "textarea", tabIndex: 0, onPaste: this.handlePaste, className: this.props.className, style: Object.assign(Object.assign({}, defaults), this.props.textareaStyle), ref: this.textAreaRef }, void 0));
+        return (jsx("div", { id: "jazzy-ce-area", contentEditable: !this.props.disabled, role: "textbox", "aria-label": "textarea", tabIndex: 0, onPaste: this.handlePaste, className: this.props.className, style: Object.assign(Object.assign({}, defaults), this.props.textareaStyle), ref: this.textAreaRef }, void 0));
     }
 }
 // eslint-disable-next-line react/static-property-placement

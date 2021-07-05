@@ -7,11 +7,11 @@ interface VariableOptions {
     styles?: string;
     format?: string;
 }
-declare type TextAreaState = Array<VariableOptions | string>;
+declare type EditorState = Array<VariableOptions | string>;
 
 interface Props {
     onChange: Function;
-    startValue: TextAreaState;
+    startValue: EditorState;
     textareaStyle?: React.CSSProperties;
     disabled?: boolean;
     className?: string;
@@ -46,4 +46,4 @@ declare class UnicodeTextArea extends Component {
 }
 
 export default UnicodeTextArea;
-export { TextAreaState, VariableOptions };
+export { EditorState, VariableOptions };

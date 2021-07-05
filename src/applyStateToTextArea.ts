@@ -1,10 +1,11 @@
-import { TextAreaState } from './makeState';
+import { EditorState } from './makeState';
 import createVariableElement from './createVariableElement';
 
-const applyStateToTextArea1 = (state: TextAreaState, textArea: HTMLDivElement) => {
-  const p = document.createElement('div');
-  textArea.appendChild(p)
-  let row = p;
+const applyStateToTextArea1 = (state: EditorState, textArea: HTMLDivElement) => {
+  //future implementation
+  // const p = document.createElement('div');
+ // textArea.appendChild(p)
+  let row = textArea;
   state.forEach((el, i) => {
     if (typeof el === 'string') {
       if (el === '\n') {
@@ -23,7 +24,7 @@ const applyStateToTextArea1 = (state: TextAreaState, textArea: HTMLDivElement) =
   });
 };
 
-const applyStateToTextArea2 = (state: TextAreaState, textArea: HTMLDivElement) => {
+const applyStateToTextArea2 = (state: EditorState, textArea: HTMLDivElement) => {
   let row = textArea;
   state.forEach((el) => {
     if (typeof el === 'string') {
