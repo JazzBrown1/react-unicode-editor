@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-unicode-editor-example/static/css/main.0e5f431d.chunk.css",
-    "main.js": "/react-unicode-editor-example/static/js/main.1c86a5d9.chunk.js",
-    "main.js.map": "/react-unicode-editor-example/static/js/main.1c86a5d9.chunk.js.map",
-    "runtime-main.js": "/react-unicode-editor-example/static/js/runtime-main.e061df0f.js",
-    "runtime-main.js.map": "/react-unicode-editor-example/static/js/runtime-main.e061df0f.js.map",
-    "static/js/2.08a1a18a.chunk.js": "/react-unicode-editor-example/static/js/2.08a1a18a.chunk.js",
-    "static/js/2.08a1a18a.chunk.js.map": "/react-unicode-editor-example/static/js/2.08a1a18a.chunk.js.map",
-    "static/js/3.6be7e55f.chunk.js": "/react-unicode-editor-example/static/js/3.6be7e55f.chunk.js",
-    "static/js/3.6be7e55f.chunk.js.map": "/react-unicode-editor-example/static/js/3.6be7e55f.chunk.js.map",
-    "index.html": "/react-unicode-editor-example/index.html",
-    "static/css/main.0e5f431d.chunk.css.map": "/react-unicode-editor-example/static/css/main.0e5f431d.chunk.css.map",
-    "static/js/2.08a1a18a.chunk.js.LICENSE.txt": "/react-unicode-editor-example/static/js/2.08a1a18a.chunk.js.LICENSE.txt"
+    "main.css": "/react-unicode-editor/static/css/main.0e5f431d.chunk.css",
+    "main.js": "/react-unicode-editor/static/js/main.1c86a5d9.chunk.js",
+    "main.js.map": "/react-unicode-editor/static/js/main.1c86a5d9.chunk.js.map",
+    "runtime-main.js": "/react-unicode-editor/static/js/runtime-main.bc1f1be7.js",
+    "runtime-main.js.map": "/react-unicode-editor/static/js/runtime-main.bc1f1be7.js.map",
+    "static/js/2.08a1a18a.chunk.js": "/react-unicode-editor/static/js/2.08a1a18a.chunk.js",
+    "static/js/2.08a1a18a.chunk.js.map": "/react-unicode-editor/static/js/2.08a1a18a.chunk.js.map",
+    "static/js/3.6be7e55f.chunk.js": "/react-unicode-editor/static/js/3.6be7e55f.chunk.js",
+    "static/js/3.6be7e55f.chunk.js.map": "/react-unicode-editor/static/js/3.6be7e55f.chunk.js.map",
+    "index.html": "/react-unicode-editor/index.html",
+    "static/css/main.0e5f431d.chunk.css.map": "/react-unicode-editor/static/css/main.0e5f431d.chunk.css.map",
+    "static/js/2.08a1a18a.chunk.js.LICENSE.txt": "/react-unicode-editor/static/js/2.08a1a18a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e061df0f.js",
+    "static/js/runtime-main.bc1f1be7.js",
     "static/js/2.08a1a18a.chunk.js",
     "static/css/main.0e5f431d.chunk.css",
     "static/js/main.1c86a5d9.chunk.js"
