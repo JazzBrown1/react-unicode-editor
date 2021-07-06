@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
 
 interface VariableOptions {
     code: string;
@@ -11,7 +11,7 @@ declare type EditorState = Array<VariableOptions | string>;
 
 interface Props {
     onChange: Function;
-    startValue: EditorState;
+    startValue?: EditorState;
     textareaStyle?: React.CSSProperties;
     disabled?: boolean;
     className?: string;
@@ -25,15 +25,16 @@ declare class UnicodeTextArea extends Component {
         className: string;
         throttle: boolean;
         throttleInterval: number;
+        startValue: never[];
     };
-    textAreaRef: any;
     props: Props;
-    listener: EventListener | null;
+    editorRef: RefObject<HTMLDivElement>;
     throttling: boolean;
     shouldUpdate: boolean;
     constructor(props: Props);
     componentDidMount(): void;
     componentWillUnmount(): void;
+    handlePaste: () => void;
     isFocused(): boolean;
     format(format: string): void;
     updateState: () => void;
@@ -41,7 +42,6 @@ declare class UnicodeTextArea extends Component {
     refresh: () => void;
     addVariable(options: VariableOptions): void;
     addText(text: string): void;
-    handlePaste: (e: React.ClipboardEvent) => void;
     render(): JSX.Element;
 }
 

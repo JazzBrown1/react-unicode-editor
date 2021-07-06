@@ -324,6 +324,7 @@ const makeState = (TextAreaElement) => {
     return arr;
 };
 
+// import doPaste from './noExec/doPaste';
 // import setNewRange from './setNewRange';
 const defaults = {
     border: '1px solid black',
@@ -339,23 +340,34 @@ class UnicodeTextArea extends Component {
         super(props);
         this.throttling = false;
         this.shouldUpdate = false;
+        this.handlePaste = () => {
+            // The below line is a workaround where chrome will insert a span into a new
+            // line which becomes inaccessable This will be replaced with better cleanup logic
+            setTimeout(() => {
+                if (!this.editorRef.current)
+                    return;
+                const state = makeState(this.editorRef.current);
+                this.editorRef.current.innerHTML = '';
+                applyStateToTextArea1(state, this.editorRef.current);
+            }, 5);
+            // doPaste();
+        };
         this.updateState = () => {
             if (this.props.throttle)
                 this.throttle();
             else
-                this.props.onChange(makeState(this.textAreaRef.current));
+                this.props.onChange(makeState(this.editorRef.current));
         };
         this.throttle = () => {
             if (this.throttling) {
                 this.shouldUpdate = true;
-                return;
             }
             else {
-                this.props.onChange(makeState(this.textAreaRef.current));
+                this.props.onChange(makeState(this.editorRef.current));
                 this.throttling = true;
                 setTimeout(() => {
                     if (this.shouldUpdate) {
-                        this.props.onChange(makeState(this.textAreaRef.current));
+                        this.props.onChange(makeState(this.editorRef.current));
                         this.shouldUpdate = false;
                     }
                     this.throttling = false;
@@ -363,61 +375,53 @@ class UnicodeTextArea extends Component {
             }
         };
         this.refresh = () => {
-            if (!this.textAreaRef.current)
+            if (!this.editorRef.current)
                 return;
-            this.textAreaRef.current.innerHTML = '';
-            applyStateToTextArea1(this.props.startValue, this.textAreaRef.current);
-        };
-        this.handlePaste = (e) => {
-            // The below line is a workaround where chrome will insert a span into a new line which becomes inaccessable
-            // This will be replaced with better cleanup logic
-            setTimeout(() => {
-                const state = makeState(this.textAreaRef.current);
-                this.textAreaRef.current.innerHTML = '';
-                applyStateToTextArea1(state, this.textAreaRef.current);
-            }, 5);
-            // doPaste();
+            this.editorRef.current.innerHTML = '';
+            applyStateToTextArea1(this.props.startValue || [], this.editorRef.current);
         };
         this.props = props;
-        this.textAreaRef = createRef();
-        this.listener = null;
+        this.editorRef = createRef();
         document.execCommand('defaultParagraphSeparator', false, 'div');
     }
     componentDidMount() {
-        applyStateToTextArea1(this.props.startValue, this.textAreaRef.current);
-        this.textAreaRef.current.addEventListener("input", this.updateState, false);
-        //this.textAreaRef.current.addEventListener('paste', () => {setTimeout(this.refresh,0)}, false);
+        if (!this.editorRef.current)
+            return;
+        applyStateToTextArea1(this.props.startValue || [], this.editorRef.current);
+        this.editorRef.current.addEventListener('input', this.updateState, false);
     }
     componentWillUnmount() {
-        this.textAreaRef.current.removeEventListener("input", this.updateState, false);
-        //this.textAreaRef.current.removeEventListener('paste', () => {setTimeout(this.refresh,0)}, false);
+        if (!this.editorRef.current)
+            return;
+        this.editorRef.current.removeEventListener('input', this.updateState, false);
     }
     isFocused() {
         const selection = document.getSelection();
         if (!selection)
             return false;
-        if (document.activeElement === this.textAreaRef.current)
+        if (document.activeElement === this.editorRef.current)
             return true;
-        return this.textAreaRef.current.contains(selection === null || selection === void 0 ? void 0 : selection.anchorNode);
+        return Boolean(this.editorRef.current
+            && this.editorRef.current.contains(selection === null || selection === void 0 ? void 0 : selection.anchorNode));
     }
     format(format) {
-        if (!this.textAreaRef.current)
+        if (!this.editorRef.current)
             return;
         if (!this.isFocused())
             return;
-        formatSelection(this.textAreaRef.current, format);
+        formatSelection(this.editorRef.current, format);
         this.updateState();
     }
     addVariable(options) {
-        if (!this.textAreaRef.current)
+        if (!this.editorRef.current)
             return;
         if (!this.isFocused())
             return;
-        addVariableElement(this.textAreaRef.current, options);
+        addVariableElement(this.editorRef.current, options);
         this.updateState();
     }
     addText(text) {
-        if (!this.textAreaRef.current)
+        if (!this.editorRef.current)
             return;
         if (!this.isFocused())
             return;
@@ -425,7 +429,7 @@ class UnicodeTextArea extends Component {
         this.updateState();
     }
     render() {
-        return (jsx("div", { id: "jazzy-ce-area", contentEditable: !this.props.disabled, role: "textbox", "aria-label": "textarea", tabIndex: 0, onPaste: this.handlePaste, className: this.props.className, style: Object.assign(Object.assign({}, defaults), this.props.textareaStyle), ref: this.textAreaRef }, void 0));
+        return (jsx("div", { id: "jazzy-ce-area", contentEditable: !this.props.disabled, role: "textbox", "aria-label": "textarea", tabIndex: 0, onPaste: this.handlePaste, className: this.props.className, style: Object.assign(Object.assign({}, defaults), this.props.textareaStyle), ref: this.editorRef }, void 0));
     }
 }
 // eslint-disable-next-line react/static-property-placement
@@ -434,7 +438,8 @@ UnicodeTextArea.defaultProps = {
     disabled: false,
     className: '',
     throttle: true,
-    throttleInterval: 200
+    throttleInterval: 200,
+    startValue: [],
 };
 
 export default UnicodeTextArea;

@@ -6,6 +6,8 @@ The primary use case for this component is for marketing apps that target social
 
 This component works on all modern browsers, but does not support Internet Explorer!
 
+## [Check out the demo!](https://jazzbrown1.github.io/react-unicode-editor/)
+
 ### Usage
 
 ```jsx
