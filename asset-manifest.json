@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/react-unicode-editor/static/css/main.0e5f431d.chunk.css",
-    "main.js": "/react-unicode-editor/static/js/main.1c86a5d9.chunk.js",
-    "main.js.map": "/react-unicode-editor/static/js/main.1c86a5d9.chunk.js.map",
-    "runtime-main.js": "/react-unicode-editor/static/js/runtime-main.bc1f1be7.js",
-    "runtime-main.js.map": "/react-unicode-editor/static/js/runtime-main.bc1f1be7.js.map",
-    "static/js/2.08a1a18a.chunk.js": "/react-unicode-editor/static/js/2.08a1a18a.chunk.js",
-    "static/js/2.08a1a18a.chunk.js.map": "/react-unicode-editor/static/js/2.08a1a18a.chunk.js.map",
-    "static/js/3.6be7e55f.chunk.js": "/react-unicode-editor/static/js/3.6be7e55f.chunk.js",
-    "static/js/3.6be7e55f.chunk.js.map": "/react-unicode-editor/static/js/3.6be7e55f.chunk.js.map",
+    "main.css": "/react-unicode-editor/static/css/main.ab2d7a8e.chunk.css",
+    "main.js": "/react-unicode-editor/static/js/main.65a0bc4e.chunk.js",
+    "main.js.map": "/react-unicode-editor/static/js/main.65a0bc4e.chunk.js.map",
+    "runtime-main.js": "/react-unicode-editor/static/js/runtime-main.5997ceb6.js",
+    "runtime-main.js.map": "/react-unicode-editor/static/js/runtime-main.5997ceb6.js.map",
+    "static/css/2.d5583955.chunk.css": "/react-unicode-editor/static/css/2.d5583955.chunk.css",
+    "static/js/2.72c98fd0.chunk.js": "/react-unicode-editor/static/js/2.72c98fd0.chunk.js",
+    "static/js/2.72c98fd0.chunk.js.map": "/react-unicode-editor/static/js/2.72c98fd0.chunk.js.map",
+    "static/js/3.97a6e943.chunk.js": "/react-unicode-editor/static/js/3.97a6e943.chunk.js",
+    "static/js/3.97a6e943.chunk.js.map": "/react-unicode-editor/static/js/3.97a6e943.chunk.js.map",
     "index.html": "/react-unicode-editor/index.html",
-    "static/css/main.0e5f431d.chunk.css.map": "/react-unicode-editor/static/css/main.0e5f431d.chunk.css.map",
-    "static/js/2.08a1a18a.chunk.js.LICENSE.txt": "/react-unicode-editor/static/js/2.08a1a18a.chunk.js.LICENSE.txt"
+    "static/css/2.d5583955.chunk.css.map": "/react-unicode-editor/static/css/2.d5583955.chunk.css.map",
+    "static/css/main.ab2d7a8e.chunk.css.map": "/react-unicode-editor/static/css/main.ab2d7a8e.chunk.css.map",
+    "static/js/2.72c98fd0.chunk.js.LICENSE.txt": "/react-unicode-editor/static/js/2.72c98fd0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bc1f1be7.js",
-    "static/js/2.08a1a18a.chunk.js",
-    "static/css/main.0e5f431d.chunk.css",
-    "static/js/main.1c86a5d9.chunk.js"
+    "static/js/runtime-main.5997ceb6.js",
+    "static/css/2.d5583955.chunk.css",
+    "static/js/2.72c98fd0.chunk.js",
+    "static/css/main.ab2d7a8e.chunk.css",
+    "static/js/main.65a0bc4e.chunk.js"
   ]
 }
