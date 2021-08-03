@@ -7,7 +7,7 @@ export type CharacterCount = {
 
 export const countCharacters = (arr: EditorState) => {
   const count = arr.reduce<CharacterCount>((acc, cur) => (typeof cur === 'string'
-    ? { chars: acc.chars + [...cur].length, bytes: acc.bytes + cur.length }
+    ? { chars: acc.chars + Array.from(cur).length, bytes: acc.bytes + cur.length }
     : acc), { chars: 0, bytes: 0 });
   return count;
 };

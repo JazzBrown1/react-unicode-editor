@@ -1,10 +1,13 @@
+import React from 'react';
 import { EditorState } from './makeState';
 import createVariableElement from './createVariableElement';
 
-const applyStateToTextArea1 = (state: EditorState, textArea: HTMLDivElement) => {
-  //future implementation
+const applyStateToTextArea1 = (
+  state: EditorState, textArea: HTMLDivElement, variableStyle?: React.CSSProperties,
+) => {
+  // future implementation
   // const p = document.createElement('div');
- // textArea.appendChild(p)
+  // textArea.appendChild(p)
   let row = textArea;
   state.forEach((el, i) => {
     if (typeof el === 'string') {
@@ -18,25 +21,10 @@ const applyStateToTextArea1 = (state: EditorState, textArea: HTMLDivElement) => 
       const str = new Text(el);
       row.appendChild(str);
     } else {
-      const span = createVariableElement(el);
-      row.appendChild(span);
-    }
-  });
-};
-
-const applyStateToTextArea2 = (state: EditorState, textArea: HTMLDivElement) => {
-  let row = textArea;
-  state.forEach((el) => {
-    if (typeof el === 'string') {
-      const str = new Text(el);
-      row.appendChild(str);
-    } else {
-      const span = createVariableElement(el);
+      const span = createVariableElement(el, variableStyle);
       row.appendChild(span);
     }
   });
 };
 
 export default applyStateToTextArea1;
-
-export {applyStateToTextArea1, applyStateToTextArea2}

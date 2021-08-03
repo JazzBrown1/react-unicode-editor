@@ -33,4 +33,4 @@ const App = () => {
 
 Please see the example for full usage.
 
-#### This library is still in development and there are some known issues - If you find any more please raise on the issues page on github.
+#### If you find any issues please raise on the issues page on github.

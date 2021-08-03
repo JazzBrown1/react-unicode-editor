@@ -29,12 +29,12 @@
     ],
     "rules": {
       "import/extensions": "off",
-
+      "lines-between-class-members": "off",
       "react/jsx-filename-extension": ["off", { "extensions": [".js", ".jsx"] }],
       "no-use-before-define": "off",
       "@typescript-eslint/no-use-before-define": ["error"],
       "linebreak-style": "off",
-      "object-curly-newline" :"warn"
-
+      "object-curly-newline" :"warn",
+      "import/no-unresolved": ["error", { "ignore": ["^react$"] }]
     }
 }

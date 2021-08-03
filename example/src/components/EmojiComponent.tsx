@@ -31,7 +31,7 @@ const EmojiComponent = ({ insertText }:props) => {
 
       <Dropdown.Menu>
 
-        <Picker onEmojiClick={onEmojiClick} disableAutoFocus />
+        <Picker onEmojiClick={onEmojiClick} disableAutoFocus native />
       </Dropdown.Menu>
     </Dropdown>
   );

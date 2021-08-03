@@ -7,6 +7,9 @@ interface props {
   onVariableClick: Function;
 }
 
+const userVariablesBGColor = '#1ce600';
+const productVariablesBGColor = '#29aaff';
+
 const VariableButtons = ({ onVariableClick }: props) => (
   <>
     <span className="mr-1 text-secondary font-weight-light pl-1 d-none d-lg-inline-block">Variables: </span>
@@ -28,6 +31,7 @@ const VariableButtons = ({ onVariableClick }: props) => (
             inputText: 'Title',
             code: '<<user.title>>',
             previewText: 'Mr',
+            style: { color: 'white', backgroundColor: userVariablesBGColor },
           });
         }}
       >
@@ -40,6 +44,7 @@ const VariableButtons = ({ onVariableClick }: props) => (
             inputText: 'First Name',
             code: '<<user.firstName>>',
             previewText: 'John',
+            style: { color: 'white', backgroundColor: userVariablesBGColor },
           });
         }}
       >
@@ -52,6 +57,7 @@ const VariableButtons = ({ onVariableClick }: props) => (
             inputText: 'Last Name',
             code: '<<user.lastName>>',
             previewText: 'Smith',
+            style: { color: 'white', backgroundColor: userVariablesBGColor },
           });
         }}
       >
@@ -77,6 +83,7 @@ const VariableButtons = ({ onVariableClick }: props) => (
             inputText: 'Product Name',
             code: '<<product.title>>',
             previewText: 'Deluxe Vacuum Cleaner',
+            style: { color: 'white', backgroundColor: productVariablesBGColor },
           });
         }}
       >
@@ -89,6 +96,7 @@ const VariableButtons = ({ onVariableClick }: props) => (
             inputText: 'Product Price',
             code: '<<product.price>>',
             previewText: '49.99',
+            style: { color: 'white', backgroundColor: productVariablesBGColor },
           });
         }}
       >
@@ -101,6 +109,7 @@ const VariableButtons = ({ onVariableClick }: props) => (
             inputText: 'Product Category',
             code: '<<product.category>>',
             previewText: 'Home & Appliances',
+            style: { color: 'white', backgroundColor: productVariablesBGColor },
           });
         }}
       >

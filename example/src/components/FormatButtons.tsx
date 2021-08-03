@@ -28,7 +28,6 @@ const formats = [
 
 const FormatButtons = ({ onFormatClick }: props) => (
   <>
-    <span className="mr-1 text-primary font-weight-light d-none d-lg-inline-block">Format: </span>
     <Button
       className="mr-1"
       variant="outline-primary"
@@ -36,12 +35,11 @@ const FormatButtons = ({ onFormatClick }: props) => (
         onFormatClick('normal');
       }}
       onMouseDown={(e) => {
-        e.stopPropagation();
         e.preventDefault();
       }}
       as="div"
     >
-      Normal
+      Regular
     </Button>
     <Button
       className="mr-1"
@@ -50,12 +48,11 @@ const FormatButtons = ({ onFormatClick }: props) => (
         onFormatClick('sansBold');
       }}
       onMouseDown={(e) => {
-        e.stopPropagation();
         e.preventDefault();
       }}
       as="div"
     >
-      𝗕𝗼𝗹𝗱
+      𝐁
     </Button>
     <Button
       className="mr-1"
@@ -64,12 +61,11 @@ const FormatButtons = ({ onFormatClick }: props) => (
         onFormatClick('sansItalic');
       }}
       onMouseDown={(e) => {
-        e.stopPropagation();
         e.preventDefault();
       }}
       as="div"
     >
-      𝘐𝘵𝘢𝘭𝘪𝘤
+      𝒊
     </Button>
     <DropdownButton
       onSelect={(format) => {
@@ -81,7 +77,6 @@ const FormatButtons = ({ onFormatClick }: props) => (
       variant="outline-primary"
       title="More..."
       onMouseDown={(e) => {
-        e.stopPropagation();
         e.preventDefault();
       }}
     >

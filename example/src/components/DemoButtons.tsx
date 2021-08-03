@@ -8,13 +8,11 @@ interface props {
   setMounted :Function;
   disabled :boolean;
   setDisabled :Function;
-  color :string;
-  setColor :Function;
 
 }
 
 const DemoButtons = ({
-  mounted, setMounted, disabled, setDisabled, color, setColor,
+  mounted, setMounted, disabled, setDisabled,
 }: props) => (
   <>
     <Button
@@ -29,19 +27,6 @@ const DemoButtons = ({
       as="div"
     >
       {mounted ? 'Unmount' : 'Mount'}
-    </Button>
-    <Button
-      className="mr-1"
-      onClick={() => {
-        setColor(color === 'blue' ? 'white' : 'blue');
-      }}
-      onMouseDown={(e) => {
-        e.stopPropagation();
-        e.preventDefault();
-      }}
-      as="div"
-    >
-      Change Color
     </Button>
     <Button
       className="mr-1"

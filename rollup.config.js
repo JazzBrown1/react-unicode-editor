@@ -2,7 +2,7 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 
 const ex = [{
-  input: './src/UnicodeEditor.tsx',
+  input: './src/lib.ts',
   output: [
     { file: './dist/lib.js', format: 'esm' },
   ],
@@ -12,7 +12,7 @@ const ex = [{
   external: ['react', 'react/jsx-runtime'],
 },
 {
-  input: './typings/UnicodeEditor.d.ts',
+  input: './typings/lib.d.ts',
   output: [{ file: 'dist/lib.d.ts', format: 'es' }],
   plugins: [dts({})],
 }];

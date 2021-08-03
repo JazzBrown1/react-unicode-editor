@@ -8,15 +8,13 @@
     "type": "git",
     "url": "https://github.com/JazzBrown1/react-unicode-editor.git"
   },
-  "dependencies": {
-    "rollup": "^2.52.7"
-  },
+  "dependencies": {},
   "scripts": {
     "build": "tsc && rollup --config"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": ">16.8",
+    "react-dom": ">16.8"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^5.3.0",
@@ -37,11 +35,10 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "rollup": "^2.52.7",
     "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^3.0.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "typescript": "^4.2.4",
-    "rollup-plugin-dts": "^3.0.2"
+    "typescript": "^4.2.4"
   }
 }

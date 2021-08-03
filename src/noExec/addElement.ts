@@ -1,5 +1,5 @@
-import insertNodeAtIndex from '../insertNodeAtIndex';
-import setNewFocus from '../setNewFocus';
+import insertNodeAtIndex from './insertNodeAtIndex';
+import setNewFocus from './setNewFocus';
 
 const addElement = (
   textAreaElement: HTMLDivElement, selection: Selection | null, newElement: HTMLSpanElement | Text,

@@ -1,4 +1,4 @@
-{
+{"root": true,
   "compilerOptions": {
     "outDir": "typings",
     "allowJs": true,

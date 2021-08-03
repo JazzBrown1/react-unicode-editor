@@ -8,6 +8,7 @@ const PreviewDisplay = (
     className="pt-4"
     style={{
       whiteSpace: 'pre-wrap',
+      overflowWrap: 'break-word',
     }}
   >
     <h4>{heading}</h4>
