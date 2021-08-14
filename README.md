@@ -22,7 +22,7 @@ const App = () => {
       startValue={unicodeState}
       onChange={(state) => { setUnicodeState(state) }}
       ref={unicodeEditorRef}
-      textareaStyle={{ minHeight: 100, backgroundColor: 'blue' }}
+      style={{ minHeight: 100, backgroundColor: 'blue' }}
       disabled={disabled}
       throttle
       throttleInterval={300}
