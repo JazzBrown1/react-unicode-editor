@@ -1,12 +1,17 @@
-{ 
-  "root": true,
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
-  },
+{
+    "root": true,
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
+    },
     "env": {
         "browser": true,
         "es2021": true
@@ -28,13 +33,21 @@
         "@typescript-eslint"
     ],
     "rules": {
-      "import/extensions": "off",
-
-      "react/jsx-filename-extension": ["off", { "extensions": [".js", ".jsx"] }],
-      "no-use-before-define": "off",
-      "@typescript-eslint/no-use-before-define": ["error"],
-      "linebreak-style": "off",
-      "object-curly-newline" :"warn"
-
+        "import/extensions": "off",
+        "react/jsx-filename-extension": [
+            "off",
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": [
+            "error"
+        ],
+        "linebreak-style": "off",
+        "object-curly-newline": "warn"
     }
 }

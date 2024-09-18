@@ -1,34 +1,30 @@
 {
-  "name": "react-unicode-editor-example",
-  "homepage": "https://jazzbrown1.github.io/react-unicode-editor/",
+  "name": "ex2",
   "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^26.0.23",
-    "@types/node": "^12.20.13",
-    "@types/react": "^17.0.6",
-    "@types/react-dom": "^17.0.5",
-    "bootstrap": "^5.0.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.108",
+    "@types/react": "^18.3.7",
+    "@types/react-dom": "^18.3.0",
     "emoji-picker-react": "^3.4.8",
-    "gh-pages": "^3.2.3",
-    "react": "^17.0.2",
+    "react": "^18.3.1",
     "react-bootstrap": "^1.6.1",
     "react-context-menu-hooks": "^0.2.1",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "react-unicode-editor": "file:..",
-    "typescript": "^4.2.4",
-    "web-vitals": "^1.1.2"
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "react-unicode-editor": "^0.2.0",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -47,15 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.28.2",
-    "@typescript-eslint/parser": "^4.28.2",
-    "eslint": "^7.30.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
